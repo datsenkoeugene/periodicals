@@ -14,3 +14,15 @@ input:-webkit-autofill:active {
     max-width: 600px !important;
     margin: 50px auto !important;
 }
+
+.fas {
+    pointer-events: none;
+}
+
+thead tr:hover {
+    color: #fff !important;
+}
+
+tbody tr:hover {
+    color: #444 !important;
+}
