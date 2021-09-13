@@ -1,0 +1,103 @@
+<%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
+<%@ page import="com.eugenedatsenko.Path" %>
+<header class="header">
+    <c:if test="${not empty user}">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a href="${Path.COMMAND_PERIODICALS_LIST}" class="navbar-brand">
+                    <i class="fas fa-book-open"></i>
+                    <fmt:message key="menu.label.title"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <c:choose>
+                        <c:when test="${userRole.name == 'admin' }">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="${Path.COMMAND_PERIODICALS_LIST}">
+                                        <fmt:message key="menu.label.item.periodicals"/>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="${Path.COMMAND_USERS_LIST}">
+                                        <fmt:message key="menu.label.item.users"/>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="${Path.COMMAND_INSERT_PUBLICATION}">
+                                        <fmt:message key="menu.label.item.newPeriodicals"/>
+                                    </a>
+                                </li>
+                            </ul>
+                            <c:if test="${not empty userRole}">
+                                <div class="text-white">
+                                    <c:out value="(${userRole.name})"/>
+                                </div>
+                            </c:if>
+                            <a href="controller?command=logout"
+                               class="btn btn-outline-success ms-2">
+                                <i class="fas fa-arrow-left"></i>
+                                <fmt:message key="label.button.logout"/>
+                            </a> &nbsp;
+                        </c:when>
+                        <c:when test="${userRole.name == 'user'}">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="${Path.COMMAND_PERIODICALS_LIST}">
+                                        <fmt:message key="menu.label.item.periodicals"/>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="#">
+                                        <fmt:message key="menu.label.item.myPeriodicals"/>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link"
+                                       aria-current="page"
+                                       href="#">
+                                        <fmt:message key="menu.label.item.check"/>
+                                    </a>
+                                </li>
+                            </ul>
+                            <c:if test="${not empty userRole}">
+                                <div class="text-white">
+                                    <c:out value="(${userRole.name})"/>
+                                </div>
+                            </c:if>
+                            <a href="controller?command=logout"
+                               class="btn btn-outline-success ms-2">
+                                <i class="fas fa-arrow-left"></i>
+                                <fmt:message key="label.button.logout"/>
+                            </a>
+                        </c:when>
+                    </c:choose>
+                </div>
+            </div>
+        </nav>
+    </c:if>
+
+    <c:if test="${empty user and title ne 'Login'}">
+        <div id="rightHeader">
+            <a href="login.jsp">
+                Login
+            </a>
+        </div>
+    </c:if>
+</header>

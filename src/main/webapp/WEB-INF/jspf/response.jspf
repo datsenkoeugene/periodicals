@@ -1,0 +1,5 @@
+<%
+    response.addHeader("Pragma", "no-cache");
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    response.setDateHeader("Expires", 0);
+%>

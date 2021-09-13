@@ -1,0 +1,10 @@
+<div class="dropdown mt-5 d-flex">
+    <button class="btn btn-outline-secondary btn-sm dropdown-toggle m-auto w-25" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+        <fmt:message key="label.lang.language"/>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="controller?command=language&lang=en&path=${requestPath}"><fmt:message key="label.lang.en"/></a></li>
+        <li><a class="dropdown-item" href="controller?command=language&lang=ru&path=${requestPath}"><fmt:message key="label.lang.ru"/></a></li>
+    </ul>
+</div>

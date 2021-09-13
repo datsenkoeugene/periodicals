@@ -1,0 +1,11 @@
+<Context>
+    <Resource name="jdbc/FinalProject"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+              defaultAutoCommit="false"
+              defaultTransactionIsolation="READ_COMMITTED"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              username="root" password="1qaz2wsx"
+              url="jdbc:mysql://localhost:3306/periodicals"/>
+</Context>

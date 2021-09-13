@@ -1,0 +1,5 @@
+<footer class="fixed-bottom bg-light">
+    <p class="text-center mb-0 py-3">
+        <fmt:message key="footer_jspf.label"/>
+    </p>
+</footer>
