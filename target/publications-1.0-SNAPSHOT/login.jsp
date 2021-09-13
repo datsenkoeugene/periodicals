@@ -7,7 +7,6 @@
 <c:set var="title" value="Login"/>
 <%@ include file="/WEB-INF/jspf/head.jspf" %>
 <body>
-
 <div class="container">
     <%@include file="/WEB-INF/jspf/language.jspf" %>
     <c:if test="${errorMessage != null}">
