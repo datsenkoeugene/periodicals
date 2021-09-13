@@ -13,19 +13,19 @@ import org.apache.log4j.Logger;
  * Security filter.
  *
  * @author Y. Datsenko
- *
  */
 public class CommandAccessFilter implements Filter {
+
     private static final Logger log = Logger.getLogger(CommandAccessFilter.class);
 
-    // commands access
     private static Map<Role, List<String>> accessMap = new HashMap<>();
+
     private static List<String> commons = new ArrayList<>();
+
     private static List<String> outOfControl = new ArrayList<>();
 
     public void destroy() {
         log.debug("Filter destruction starts");
-        // do nothing
         log.debug("Filter destruction finished");
     }
 
@@ -60,7 +60,7 @@ public class CommandAccessFilter implements Filter {
         if (session == null)
             return false;
 
-        Role userRole = (Role)session.getAttribute("userRole");
+        Role userRole = (Role) session.getAttribute("userRole");
         if (userRole == null)
             return false;
 
@@ -71,16 +71,13 @@ public class CommandAccessFilter implements Filter {
     public void init(FilterConfig fConfig) throws ServletException {
         log.debug("Filter initialization starts");
 
-        // roles
         accessMap.put(Role.ADMIN, asList(fConfig.getInitParameter("admin")));
         accessMap.put(Role.USER, asList(fConfig.getInitParameter("user")));
         log.trace("Access map --> " + accessMap);
 
-        // commons
         commons = asList(fConfig.getInitParameter("common"));
         log.trace("Common commands --> " + commons);
 
-        // out of control
         outOfControl = asList(fConfig.getInitParameter("out-of-control"));
         log.trace("Out of control commands --> " + outOfControl);
 
@@ -90,8 +87,7 @@ public class CommandAccessFilter implements Filter {
     /**
      * Extracts parameter values from string.
      *
-     * @param str
-     *            parameter values string.
+     * @param str parameter values string.
      * @return list of parameter values.
      */
     private List<String> asList(String str) {
