@@ -38,7 +38,8 @@ public class AlertTag extends TagSupport {
 
     public String alert(String message, StringBuilder stringBuilder) {
         return stringBuilder
-                .append("<div class=\"info alert alert-danger\" role=\"alert\">")
+                .append("<div class=\"info alert alert-dismissible alert-danger\">")
+                .append("<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>")
                 .append(message)
                 .append("</div>")
                 .toString();
