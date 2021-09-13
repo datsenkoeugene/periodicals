@@ -5,6 +5,6 @@ console.log(`%cInit App`, `color: lime;`);
 
 validateForm('.needs-validation');
 
-clearAlert('info');
+// clearAlert('info');
 
 
