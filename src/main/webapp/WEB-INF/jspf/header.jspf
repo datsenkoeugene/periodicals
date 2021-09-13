@@ -92,12 +92,4 @@
             </div>
         </nav>
     </c:if>
-
-    <c:if test="${empty user and title ne 'Login'}">
-        <div id="rightHeader">
-            <a href="login.jsp">
-                Login
-            </a>
-        </div>
-    </c:if>
 </header>
