@@ -1,6 +1,6 @@
 export const validateForm = selector => {
     const forms = document.querySelectorAll(selector);
-    [...forms].forEach((form) => {
+    [...forms].forEach(form => {
         form.addEventListener('submit', event => {
             if (!form.checkValidity()) {
                 event.preventDefault();
