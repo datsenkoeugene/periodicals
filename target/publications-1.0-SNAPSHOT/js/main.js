@@ -1,10 +1,11 @@
-import { validateForm } from './validateForm.js';
-import { clearAlert } from './clearAlert.js';
+import {validateForm} from './validateForm.js';
+import {removeConfirm} from './removeConfirm.js';
 
 console.log(`%cInit App`, `color: lime;`);
 
 validateForm('.needs-validation');
 
-// clearAlert('info');
+removeConfirm('#publicationTable');
+
 
 
