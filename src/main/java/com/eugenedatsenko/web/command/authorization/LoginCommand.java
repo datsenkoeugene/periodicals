@@ -73,11 +73,11 @@ public class LoginCommand extends Command {
             log.trace("userRole --> " + userRole);
 
             if (userRole == Role.ADMIN) {
-                forward = Path.COMMAND_PERIODICALS_LIST;
+                forward = Path.COMMAND_PERIODICALS_LIST + "&page=1";
             }
 
             if (userRole == Role.USER) {
-                forward = Path.COMMAND_PERIODICALS_LIST;
+                forward = Path.COMMAND_PERIODICALS_LIST + "&page=1";
             }
             session.setAttribute("user", user);
             log.trace("Set the session attribute: user --> " + user);
