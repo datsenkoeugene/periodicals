@@ -1,0 +1,13 @@
+<%@ page import="com.eugenedatsenko.util.Pagination" %>
+<nav>
+    <ul class="pagination">
+        <c:forEach var="item" items="${Pagination.getLinks(allPublicationsList.size() - 1)}" varStatus="theCount">
+            <li class="page-item">
+                <a class="page-link"
+                   href="${Path.COMMAND_PERIODICALS_LIST}&page=${theCount.count}">
+                        ${theCount.count}
+                </a>
+            </li>
+        </c:forEach>
+    </ul>
+</nav>
