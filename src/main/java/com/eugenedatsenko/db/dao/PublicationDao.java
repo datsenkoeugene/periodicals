@@ -26,6 +26,47 @@ public class PublicationDao {
 
     private static final String SQL_DELETE_PUBLICATION = "DELETE FROM publications WHERE publication_id=?";
 
+    private static final String SQL_LIMIT_PUBLICATIONS = "SELECT * FROM publications LIMIT";
+
+    public List<Publication> getRecords(int start, int total) {
+        List<Publication> publicationList = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        try {
+            connection = DBManager.getInstance().getConnection();
+            PublicationMapper publicationMapper = new PublicationMapper();
+            resultSet = connection.createStatement().executeQuery( SQL_LIMIT_PUBLICATIONS + " " + (start - 1) + "," + total);
+            while (resultSet.next()) {
+                publicationList.add(publicationMapper.mapRow(resultSet));
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            DBManager.getInstance().rollbackAndClose(connection);
+        } finally {
+            DBManager.getInstance().commitAndClose(connection);
+        }
+        return  publicationList;
+    }
+
+    public List<Publication> getRecordsByName(int start, int total) {
+        List<Publication> publicationList = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        try {
+            connection = DBManager.getInstance().getConnection();
+            PublicationMapper publicationMapper = new PublicationMapper();
+            resultSet = connection.createStatement().executeQuery("SELECT * FROM publications ORDER BY name limit " + (start - 1) + "," + total);
+            while (resultSet.next()) {
+                publicationList.add(publicationMapper.mapRow(resultSet));
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            DBManager.getInstance().rollbackAndClose(connection);
+        } finally {
+            DBManager.getInstance().commitAndClose(connection);
+        }
+        return  publicationList;
+    }
 
     public void insertPublication(Publication publication) {
         Connection connection = null;
