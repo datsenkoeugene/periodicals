@@ -18,6 +18,7 @@ public class CommandContainer {
         commands.put("register", new RegisterCommand());
         commands.put("listPeriodicals", new PeriodicalsListCommand());
         commands.put("language", new LanguageCommand());
+        commands.put("sortByName", new SortPublicationsByNameASCCommand());
 
         // user commands
 
