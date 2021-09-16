@@ -17,5 +17,6 @@ public class Path {
     public static final String COMMAND_INSERT_PUBLICATION = "/controller?command=insertPagePublication";
     public static final String COMMAND_DELETE_PUBLICATION = "/controller?command=deletePublication";
     public static final String COMMAND_EDIT_PUBLICATION = "/controller?command=editPublication";
+    public static final String COMMAND_SORT_PUBLICATION_BY_NAME = "/controller?command=sortByName";
 
 }
