@@ -15,9 +15,19 @@ public class PeriodicalsListCommand extends Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String spageid = request.getParameter("page");
+        int pageid = Integer.parseInt(spageid);
+        int total = 3;
+        if (pageid == 1) {
+        } else {
+            pageid = pageid - 1;
+            pageid = pageid * total + 1;
+        }
         PublicationDao publicationDao = new PublicationDao();
-        List<Publication> publicationsList = publicationDao.findAllPublications();
+        List<Publication> publicationsList = publicationDao.getRecords(pageid, total);
+        List<Publication> allPublicationsList = publicationDao.findAllPublications();
         request.setAttribute("publicationsList", publicationsList);
+        request.setAttribute("allPublicationsList", allPublicationsList);
         return Path.PAGE_PERIODICALS_LIST;
     }
 }
