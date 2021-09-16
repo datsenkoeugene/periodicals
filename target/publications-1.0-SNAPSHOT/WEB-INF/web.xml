@@ -11,11 +11,11 @@
         <filter-class>com.eugenedatsenko.web.filter.CommandAccessFilter</filter-class>
         <init-param>
             <param-name>admin</param-name>
-            <param-value>listUsers lockUnlockUser insertPagePublication insertPublication deletePublication editPublication updatePublication listPeriodicals </param-value>
+            <param-value>listUsers lockUnlockUser insertPagePublication insertPublication deletePublication editPublication updatePublication listPeriodicals listPeriodicals sortByName</param-value>
         </init-param>
         <init-param>
             <param-name>user</param-name>
-            <param-value></param-value>
+            <param-value>listPeriodicals sortByName </param-value>
         </init-param>
         <init-param>
             <param-name>common</param-name>
