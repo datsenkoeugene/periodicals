@@ -30,8 +30,10 @@ public class DeletePublicationCommand extends Command {
         int publicationId = Integer.parseInt(request.getParameter("id"));
         PublicationDao publicationDao = new PublicationDao();
         publicationDao.deletePublication(publicationId);
-        List<Publication> publicationsList = publicationDao.findAllPublications();
+        List<Publication> publicationsList = publicationDao.getRecords(1, 3);
+        List<Publication> allPublicationsList = publicationDao.findAllPublications();
         request.setAttribute("publicationsList", publicationsList);
+        request.setAttribute("allPublicationsList", allPublicationsList);
         return Path.PAGE_PERIODICALS_LIST;
     }
 }
