@@ -9,9 +9,9 @@ export const removeConfirm = selector => {
     const publicationTable = document?.querySelector(selector);
     publicationTable?.addEventListener('click', e => {
         e.preventDefault();
-        const { btn } = e.target.dataset;
-        const { id } = e.target;
-        const { lang } = document.documentElement;
+        const {btn} = e.target.dataset;
+        const {id} = e.target;
+        const {lang} = document.documentElement;
         if (btn === 'editBtn') {
             location.href = `${EDIT_PUBLICATION}&id=${id}`
         } else if (btn === 'removeBtn') {
@@ -19,8 +19,9 @@ export const removeConfirm = selector => {
             const isRemove = confirm(question);
             if (isRemove) {
                 location.href = `${DELETE_PUBLICATION}&id=${id}`;
+            } else {
+                location.href = `${PERIODICALS_LIST}&page=${document.documentElement.getAttribute('page')}`;
             }
-            location.href = `${PERIODICALS_LIST}`;
         }
     })
 }
