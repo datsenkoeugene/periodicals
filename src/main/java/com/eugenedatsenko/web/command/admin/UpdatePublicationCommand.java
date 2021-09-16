@@ -81,7 +81,9 @@ public class UpdatePublicationCommand extends Command {
         publication.setTheme(theme);
         publication.setPrice(price);
         publicationDao.updatePublication(publication);
-        List<Publication> publicationsList = publicationDao.findAllPublications();
+        List<Publication> allPublicationsList = publicationDao.findAllPublications();
+        List<Publication> publicationsList = publicationDao.getRecords(1, 3);
+        request.setAttribute("allPublicationsList", allPublicationsList);
         request.setAttribute("publicationsList", publicationsList);
         log.debug("Command finished");
         return Path.PAGE_PERIODICALS_LIST;
