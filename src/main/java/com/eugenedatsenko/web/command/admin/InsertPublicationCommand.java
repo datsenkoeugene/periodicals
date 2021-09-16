@@ -82,6 +82,6 @@ public class InsertPublicationCommand extends Command {
         publicationDao.insertPublication(newPublication);
         List<Publication> publicationList = publicationDao.findAllPublications();
         request.setAttribute("publicationList", publicationList);
-        return Path.COMMAND_PERIODICALS_LIST;
+        return Path.COMMAND_PERIODICALS_LIST + "&page=1";
     }
 }
