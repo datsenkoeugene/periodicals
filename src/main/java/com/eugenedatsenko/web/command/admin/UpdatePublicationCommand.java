@@ -86,6 +86,7 @@ public class UpdatePublicationCommand extends Command {
         request.setAttribute("allPublicationsList", allPublicationsList);
         request.setAttribute("publicationsList", publicationsList);
         log.debug("Command finished");
-        return Path.PAGE_PERIODICALS_LIST;
+        System.out.println(request.getParameter("page"));
+        return Path.COMMAND_PERIODICALS_LIST + "&page=1";
     }
 }
