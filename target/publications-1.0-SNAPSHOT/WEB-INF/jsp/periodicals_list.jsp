@@ -11,8 +11,16 @@
         <fmt:message key="periodicals_list_jsp.label.title"/> (${allPublicationsList.size()})
     </h1>
     <div class="container">
+        <form class="form mt-5" method="post" action="controller">
+            <input name="command" type="hidden" value="searchByName">
+            <input type="hidden" name="page" value="${param.page}" />
+            <div class="input-group mb-3">
+                <input type="search" class="form-control" name="name" placeholder="<fmt:message key="periodicals_list_jsp.search.title"/>">
+                <button type="submit" class="btn btn-outline-dark"><fmt:message key="periodicals_list_jsp.search.button"/></button>
+            </div>
+        </form>
         <div class="table-responsive">
-            <table class="table table-bordered table-dark table-hover text-center">
+            <table class="table table-bordered table-dark table-hover text-center mt-5">
                 <thead>
                 <tr>
                     <th>
@@ -22,7 +30,7 @@
                             </span>
                             <div class="btn-group-vertical">
                                 <a href="${Path.COMMAND_SORT_PUBLICATION_BY_NAME}"
-                                    class="btn btn-xs btn-link p-0"
+                                   class="btn btn-xs btn-link p-0"
                                 >
                                     <i class="fas fa-sort-up"></i>
                                 </a>
@@ -33,19 +41,7 @@
                         </div>
                     </th>
                     <th>
-                        <div class="btn-group d-flex justify-content-center align-items-center" role="group">
-                            <span class="py-0 pl-0 pr-1">
-                                  <fmt:message key="periodicals_list_jsp.table.theme"/>
-                            </span>
-                            <div class="btn-group-vertical">
-                                <a href="#" class="btn btn-xs btn-link p-0">
-                                    <i class="fas fa-sort-up"></i>
-                                </a>
-                                <a href="#" class="btn btn-xs btn-link p-0">
-                                    <i class="fas fa-sort-down"></i>
-                                </a>
-                            </div>
-                        </div>
+                        <fmt:message key="periodicals_list_jsp.table.theme"/>
                     </th>
                     <th>
                         <div class="btn-group d-flex justify-content-center align-items-center" role="group">
