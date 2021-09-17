@@ -28,6 +28,40 @@ public class PublicationDao {
 
     private static final String SQL_LIMIT_PUBLICATIONS = "SELECT * FROM publications LIMIT";
 
+    private static final String SQL_FIND_PUBLICATIONS_BY_NAME = "SELECT * FROM publications WHERE name=?";
+
+
+    /**
+     * Returns a publication with the given name.
+     *
+     * @param name
+     *            Publication name.
+     * @return User entity.
+     */
+    public Publication findPublicationsByName(String name) {
+        Publication publication = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Connection connection = null;
+
+        try {
+            connection = DBManager.getInstance().getConnection();
+            PublicationMapper publicationMapper = new PublicationMapper();
+            preparedStatement = connection.prepareStatement(SQL_FIND_PUBLICATIONS_BY_NAME);
+            preparedStatement.setString(1, name);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                publication = publicationMapper.mapRow(resultSet);
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            DBManager.getInstance().rollbackAndClose(connection);
+        } finally {
+            DBManager.getInstance().commitAndClose(connection);
+        }
+        return publication;
+    }
+
     public List<Publication> getRecords(int start, int total) {
         List<Publication> publicationList = new ArrayList<>();
         ResultSet resultSet = null;
