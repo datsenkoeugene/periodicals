@@ -34,6 +34,7 @@ public class DeletePublicationCommand extends Command {
         List<Publication> allPublicationsList = publicationDao.findAllPublications();
         request.setAttribute("publicationsList", publicationsList);
         request.setAttribute("allPublicationsList", allPublicationsList);
-        return Path.PAGE_PERIODICALS_LIST;
+        log.debug("Command finished");
+        return Path.COMMAND_PERIODICALS_LIST + "&page=1";
     }
 }
