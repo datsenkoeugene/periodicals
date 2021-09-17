@@ -1,7 +1,6 @@
 import {
     EDIT_PUBLICATION,
     DELETE_PUBLICATION,
-    PERIODICALS_LIST,
     language
 } from './constants.js';
 
@@ -19,8 +18,6 @@ export const removeConfirm = selector => {
             const isRemove = confirm(question);
             if (isRemove) {
                 location.href = `${DELETE_PUBLICATION}&id=${id}`;
-            } else {
-                location.href = `${PERIODICALS_LIST}&page=${document.documentElement.getAttribute('page')}`;
             }
         }
     })
