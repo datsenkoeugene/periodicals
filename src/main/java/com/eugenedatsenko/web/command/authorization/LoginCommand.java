@@ -76,9 +76,16 @@ public class LoginCommand extends Command {
                 forward = Path.COMMAND_PERIODICALS_LIST + "&page=1";
             }
 
-            if (userRole == Role.USER) {
+            if (userRole == Role.USER && user.getLock()) {
+                errorMessage = "User is blocked";
+                request.setAttribute("errorMessage", errorMessage);
+                log.error("errorMessage --> " + errorMessage);
+            }
+
+            if (userRole == Role.USER && !user.getLock()) {
                 forward = Path.COMMAND_PERIODICALS_LIST + "&page=1";
             }
+
             session.setAttribute("user", user);
             log.trace("Set the session attribute: user --> " + user);
             session.setAttribute("userRole", userRole);
