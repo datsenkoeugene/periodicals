@@ -4,6 +4,8 @@ import com.eugenedatsenko.web.command.admin.*;
 import com.eugenedatsenko.web.command.authorization.LoginCommand;
 import com.eugenedatsenko.web.command.authorization.LogoutCommand;
 import com.eugenedatsenko.web.command.authorization.RegisterCommand;
+import com.eugenedatsenko.web.command.user.UpdateAccountCommand;
+import com.eugenedatsenko.web.command.user.UpdateAccountPageCommand;
 import com.eugenedatsenko.web.command.user.UserAccountCommand;
 
 import java.util.HashMap;
@@ -25,6 +27,8 @@ public class CommandContainer {
 
         // user commands
         commands.put("userAccount", new UserAccountCommand());
+        commands.put("updateAccountPage", new UpdateAccountPageCommand());
+        commands.put("updateAccount", new UpdateAccountCommand());
 
         // admin commands
         commands.put("listUsers", new UsersListCommand());
