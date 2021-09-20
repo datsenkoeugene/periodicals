@@ -11,6 +11,7 @@ public class Path {
     public static final String PAGE_EDIT_PUBLICATION = "/WEB-INF/jsp/admin/edit_publication.jsp";
     public static final String PAGE_SEARCH_PUBLICATIONS = "/WEB-INF/jsp/search_publications.jsp";
     public static final String PAGE_USER_ACCOUNT = "/WEB-INF/jsp/user/user_accounts.jsp";
+    public static final String PAGE_USER_UPDATE_ACCOUNT_PAGE = "/WEB-INF/jsp/user/user_update_account_page.jsp";
 
     public static final String COMMAND_USERS_LIST = "/controller?command=listUsers";
     public static final String COMMAND_LOCK_UNLOCK_USER = "/controller?command=lockUnlockUser";
@@ -22,4 +23,6 @@ public class Path {
     public static final String COMMAND_SORT_PUBLICATION_BY_NAME = "/controller?command=sortByName";
 
     public static final String COMMAND_USER_ACCOUNT = "/controller?command=userAccount";
+    public static final String COMMAND_USER_UPDATE_ACCOUNT_PAGE = "/controller?command=updateAccountPage";
+    public static final String COMMAND_USER_UPDATE_ACCOUNT = "/controller?command=updateAccount";
 }
