@@ -27,7 +27,7 @@
                         <td><c:out value="${account.amount}"/></td>
                         <td>
                             <div class="btn-group" role="group">
-                                <a href="#"
+                                <a href="${Path.COMMAND_USER_UPDATE_ACCOUNT_PAGE}&userId=${user.id}"
                                    class="btn btn-outline-danger rounded">
                                     <i class="fas fa-wallet"></i>
                                 </a>
