@@ -17,7 +17,7 @@
         </init-param>
         <init-param>
             <param-name>user</param-name>
-            <param-value>listPeriodicals sortByName searchByName </param-value>
+            <param-value>listPeriodicals sortByName searchByName userAccount </param-value>
         </init-param>
         <init-param>
             <param-name>common</param-name>
