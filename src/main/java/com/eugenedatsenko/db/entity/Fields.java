@@ -21,5 +21,8 @@ public class Fields {
     public static  final String PUBLICATION_THEME = "theme";
     public static  final String PUBLICATION_PRICE = "price";
 
+    public static  final String ACCOUNT_ID = "account_id";
+    public static  final String ACCOUNT_AMOUNT = "amount";
+    public static  final String ACCOUNT_USER_ID = "id_user";
 
 }
