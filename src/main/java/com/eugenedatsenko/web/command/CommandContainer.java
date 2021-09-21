@@ -7,6 +7,7 @@ import com.eugenedatsenko.web.command.authorization.RegisterCommand;
 import com.eugenedatsenko.web.command.user.UpdateAccountCommand;
 import com.eugenedatsenko.web.command.user.UpdateAccountPageCommand;
 import com.eugenedatsenko.web.command.user.UserAccountCommand;
+import com.eugenedatsenko.web.command.user.UserPeriodicalsCommand;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class CommandContainer {
         commands.put("userAccount", new UserAccountCommand());
         commands.put("updateAccountPage", new UpdateAccountPageCommand());
         commands.put("updateAccount", new UpdateAccountCommand());
+        commands.put("userPeriodicals", new UserPeriodicalsCommand());
 
         // admin commands
         commands.put("listUsers", new UsersListCommand());
