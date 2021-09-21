@@ -25,4 +25,8 @@ public class Fields {
     public static  final String ACCOUNT_AMOUNT = "amount";
     public static  final String ACCOUNT_USER_ID = "id_user";
 
+    public static  final String USER_PUBLICATIONS_ID = "id";
+    public static  final String USER_PUBLICATIONS_USER_ID = "id_user";
+    public static  final String USER_PUBLICATIONS_PUBLICATION_ID = "id_publication";
+
 }
