@@ -2,6 +2,13 @@ package com.eugenedatsenko.db.entity;
 
 import java.math.BigDecimal;
 
+
+/**
+ * Account entity.
+ *
+ * @author Y.Datsenko
+ *
+ */
 public class Account extends Entity {
 
     private static final long serialVersionUID = -4716143601005759190L;

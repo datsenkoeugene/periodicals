@@ -22,6 +22,7 @@ public class Path {
     public static final String COMMAND_DELETE_PUBLICATION = "/controller?command=deletePublication";
     public static final String COMMAND_EDIT_PUBLICATION = "/controller?command=editPublication";
     public static final String COMMAND_SORT_PUBLICATION_BY_NAME = "/controller?command=sortByName";
+    public static final String COMMAND_SORT_PUBLICATION_BY_PRICE = "/controller?command=sortByPrice";
 
     public static final String COMMAND_USER_ACCOUNT = "/controller?command=userAccount";
     public static final String COMMAND_USER_UPDATE_ACCOUNT_PAGE = "/controller?command=updateAccountPage";

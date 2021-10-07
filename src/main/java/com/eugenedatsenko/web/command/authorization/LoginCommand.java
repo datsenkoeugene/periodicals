@@ -25,9 +25,13 @@ public class LoginCommand extends Command {
 
     private static final Logger log = Logger.getLogger(LoginCommand.class);
 
+    private static int count = 0;
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         log.debug("Command starts");
+        System.out.println("############## " + count++);
+        System.out.println(request.getPathInfo());
         HttpSession session = request.getSession();
         String email = request.getParameter("email");
         log.trace("Request parameter: email --> " + email);

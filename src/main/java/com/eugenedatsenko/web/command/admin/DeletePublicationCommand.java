@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-import com.eugenedatsenko.web.command.authorization.LoginCommand;
 import org.apache.log4j.Logger;
 
 /**
@@ -22,7 +21,7 @@ public class DeletePublicationCommand extends Command {
 
     private static final long serialVersionUID = -1220702015179237244L;
 
-    private static final Logger log = Logger.getLogger(LoginCommand.class);
+    private static final Logger log = Logger.getLogger(DeletePublicationCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

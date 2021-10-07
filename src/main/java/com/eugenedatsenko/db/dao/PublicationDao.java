@@ -4,6 +4,7 @@ import com.eugenedatsenko.db.DBManager;
 import com.eugenedatsenko.db.entity.EntityMapper;
 import com.eugenedatsenko.db.entity.Fields;
 import com.eugenedatsenko.db.entity.Publication;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -34,8 +35,7 @@ public class PublicationDao {
     /**
      * Returns a publication with the given name.
      *
-     * @param name
-     *            Publication name.
+     * @param name Publication name.
      * @return User entity.
      */
     public Publication findPublicationsByName(String name) {
@@ -69,7 +69,7 @@ public class PublicationDao {
         try {
             connection = DBManager.getInstance().getConnection();
             PublicationMapper publicationMapper = new PublicationMapper();
-            resultSet = connection.createStatement().executeQuery( SQL_LIMIT_PUBLICATIONS + " " + (start - 1) + "," + total);
+            resultSet = connection.createStatement().executeQuery(SQL_LIMIT_PUBLICATIONS + " " + (start - 1) + "," + total);
             while (resultSet.next()) {
                 publicationList.add(publicationMapper.mapRow(resultSet));
             }
@@ -79,7 +79,7 @@ public class PublicationDao {
         } finally {
             DBManager.getInstance().commitAndClose(connection);
         }
-        return  publicationList;
+        return publicationList;
     }
 
     public List<Publication> getRecordsByName(int start, int total) {
@@ -99,7 +99,27 @@ public class PublicationDao {
         } finally {
             DBManager.getInstance().commitAndClose(connection);
         }
-        return  publicationList;
+        return publicationList;
+    }
+
+    public List<Publication> getRecordsByPrice(int start, int total) {
+        List<Publication> publicationList = new ArrayList<>();
+        ResultSet resultSet = null;
+        Connection connection = null;
+        try {
+            connection = DBManager.getInstance().getConnection();
+            PublicationMapper publicationMapper = new PublicationMapper();
+            resultSet = connection.createStatement().executeQuery("SELECT * FROM publications ORDER BY price limit " + (start - 1) + "," + total);
+            while (resultSet.next()) {
+                publicationList.add(publicationMapper.mapRow(resultSet));
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            DBManager.getInstance().rollbackAndClose(connection);
+        } finally {
+            DBManager.getInstance().commitAndClose(connection);
+        }
+        return publicationList;
     }
 
     public void insertPublication(Publication publication) {
@@ -220,4 +240,3 @@ public class PublicationDao {
         }
     }
 }
-

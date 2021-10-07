@@ -4,7 +4,6 @@ import com.eugenedatsenko.Path;
 import com.eugenedatsenko.db.dao.PublicationDao;
 import com.eugenedatsenko.db.entity.Publication;
 import com.eugenedatsenko.web.command.Command;
-import com.eugenedatsenko.web.command.authorization.LoginCommand;
 import org.apache.log4j.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ public class UpdatePublicationCommand extends Command {
 
     private static final long serialVersionUID = 12865185190952102L;
 
-    private static final Logger log = Logger.getLogger(LoginCommand.class);
+    private static final Logger log = Logger.getLogger(UpdatePublicationCommand.class);
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {

@@ -12,12 +12,12 @@
         <init-param>
             <param-name>admin</param-name>
             <param-value>listUsers lockUnlockUser insertPagePublication insertPublication deletePublication
-                editPublication updatePublication listPeriodicals listPeriodicals sortByName searchByName
+                editPublication updatePublication listPeriodicals listPeriodicals sortByName sortByPrice searchByName
             </param-value>
         </init-param>
         <init-param>
             <param-name>user</param-name>
-            <param-value>listPeriodicals sortByName searchByName userAccount updateAccountPage updateAccount
+            <param-value>listPeriodicals sortByName searchByName sortByPrice userAccount updateAccountPage updateAccount
                 userPeriodicals
             </param-value>
         </init-param>

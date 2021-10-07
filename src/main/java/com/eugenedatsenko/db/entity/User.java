@@ -1,5 +1,11 @@
 package com.eugenedatsenko.db.entity;
 
+/**
+ * User entity.
+ *
+ * @author Y.Datsenko
+ *
+ */
 public class User extends Entity {
 
     private static final long serialVersionUID = -6909774571463498503L;

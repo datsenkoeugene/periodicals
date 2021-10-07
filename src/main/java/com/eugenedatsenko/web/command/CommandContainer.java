@@ -8,7 +8,6 @@ import com.eugenedatsenko.web.command.user.UpdateAccountCommand;
 import com.eugenedatsenko.web.command.user.UpdateAccountPageCommand;
 import com.eugenedatsenko.web.command.user.UserAccountCommand;
 import com.eugenedatsenko.web.command.user.UserPeriodicalsCommand;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +22,8 @@ public class CommandContainer {
         commands.put("register", new RegisterCommand());
         commands.put("listPeriodicals", new PeriodicalsListCommand());
         commands.put("language", new LanguageCommand());
-        commands.put("sortByName", new SortPublicationsByNameASCCommand());
+        commands.put("sortByName", new SortPublicationsByName());
+        commands.put("sortByPrice", new SortPublicationsByPrice());
         commands.put("searchByName", new SearchByNameCommand());
 
         // user commands

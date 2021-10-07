@@ -1,7 +1,7 @@
 <%@ include file="/WEB-INF/jspf/directive/page.jspf" %>
 <%@ include file="/WEB-INF/jspf/directive/taglib.jspf" %>
 <%@ include file="/WEB-INF/jspf/response.jspf" %>
-<html lang="${sessionScope.lang}" page="${param.page}">
+<html lang="${sessionScope.lang}" page="${sessionScope.currentPage}">
 <c:set var="title" value="List periodicals" scope="page"/>
 <%@ include file="/WEB-INF/jspf/head.jspf" %>
 <body>
@@ -34,7 +34,7 @@
                                 >
                                     <i class="fas fa-sort-up"></i>
                                 </a>
-                                <a href="#" class="btn btn-xs btn-link p-0">
+                                <a href="${Path.COMMAND_SORT_PUBLICATION_BY_NAME}" class="btn btn-xs btn-link p-0">
                                     <i class="fas fa-sort-down"></i>
                                 </a>
                             </div>
@@ -49,10 +49,10 @@
                                   <fmt:message key="periodicals_list_jsp.table.price"/>
                             </span>
                             <div class="btn-group-vertical">
-                                <a href="#" class="btn btn-xs btn-link p-0">
+                                <a href="${Path.COMMAND_SORT_PUBLICATION_BY_PRICE}" class="btn btn-xs btn-link p-0">
                                     <i class="fas fa-sort-up"></i>
                                 </a>
-                                <a href="#" class="btn btn-xs btn-link p-0">
+                                <a href="${Path.COMMAND_SORT_PUBLICATION_BY_PRICE}" class="btn btn-xs btn-link p-0">
                                     <i class="fas fa-sort-down"></i>
                                 </a>
                             </div>
